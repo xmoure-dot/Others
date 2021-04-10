@@ -1,0 +1,48 @@
+using UnityEngine;
+
+public class NewBehaviourScript : MonoBehaviour
+{
+    private Rigidbody rb;
+
+    public bool isGrounded;
+    
+
+
+    void Start()
+    {
+        rb = GetComponent<Rigidbody>();
+       
+    }
+
+    
+    
+    void OnCollisionStay()
+    {
+        isGrounded = true;
+    }
+
+    
+    
+    void Update()
+    {
+        rb.AddForce(0,0,500f * Time.deltaTime);
+
+        if (Input.GetKey("d"))
+        {
+            rb.AddForce(2000f * Time.deltaTime, 0, 0);
+
+        }
+
+        if (Input.GetKey("a"))
+        {
+            rb.AddForce(-2000f * Time.deltaTime, 0, 0);
+        }
+
+        if(Input.GetKey("space")&& isGrounded)
+        {
+
+            rb.velocity=new Vector3(0,5,0);
+            isGrounded = false;
+        }
+    }
+}

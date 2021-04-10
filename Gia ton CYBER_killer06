@@ -25,7 +25,7 @@ public class NewBehaviourScript : MonoBehaviour
     
     void Update()
     {
-        rb.AddForce(0,0,500f * Time.deltaTime);
+        rb.AddForce(0,0,1000f * Time.deltaTime);
 
         if (Input.GetKey("d"))
         {
@@ -41,7 +41,7 @@ public class NewBehaviourScript : MonoBehaviour
         if(Input.GetKey("space")&& isGrounded)
         {
 
-            rb.velocity=new Vector3(0,5,0);
+            rb.velocity=new Vector3(0,5,0); // και με addForce οπως εκανα τα πιο πανω θα γινοταν καπως ετσι "rb.AddForce(new Vector3(0,5,0),ForceMode.Impulse);" 
             isGrounded = false;
         }
     }

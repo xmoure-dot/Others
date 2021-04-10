@@ -18,7 +18,7 @@ public class NewBehaviourScript : MonoBehaviour
     
     void OnCollisionStay()
     {
-        isGrounded = true;
+        isGrounded = true; // αν δεν ηταν αυτο θα ηταν σαν τον Doctor jump δλδ οσες φορες πατουσες το spaces τοσο θα ανέβαινε. 
     }
 
     
@@ -46,3 +46,4 @@ public class NewBehaviourScript : MonoBehaviour
         }
     }
 }
+
